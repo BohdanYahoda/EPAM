@@ -1,0 +1,22 @@
+using System;
+ 
+ public class Program{
+ 
+     public static void Main()
+     {
+        Console.WriteLine("Скільки зошитів потрібно?");
+        int countNotebook = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Скільки ручок потрібно");
+        int countPen = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Скільки коштує зошит?");
+        double priceNotebook = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Скільки коштує ручка?");
+        double pricePen = double.Parse(Console.ReadLine());
+        
+        double total = countNotebook * priceNotebook + countPen * pricePen;
+        Console.WriteLine($"Ви хочете купити {countNotebook} зошитів по {priceNotebook} грн та {countPen} ручок по {pricePen} грн. Сума покупки становить: " + total + " грн." );
+     }
+ }
