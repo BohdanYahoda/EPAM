@@ -1,0 +1,24 @@
+using System;
+class HomeWork {
+  static void Main() {
+    
+    int num = int.Parse(Console.ReadLine());
+    
+    int[] arr = new int [3];
+    char[] chars = num.ToString().ToCharArray();
+    
+    for (int i = 0; i < chars.Length; i++)
+    {
+        arr[i] = chars[i] - '0';
+    }
+    
+    Array.Sort(arr);
+    Array.Reverse(arr);
+    
+    var str = string.Concat(arr);
+    int result = int.Parse(str);;
+    
+    Console.WriteLine(result);
+      
+  }
+}
