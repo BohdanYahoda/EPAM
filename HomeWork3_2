@@ -1,0 +1,16 @@
+using System;
+using System.Linq;
+class HomeWork3_2 {
+  static void Main() {
+    
+    int num = int.Parse(Console.ReadLine());
+    char[] chars = num.ToString().ToCharArray();
+    int[] arr = new int [chars.Length];
+    for (int i = 0; i < chars.Length; i++)
+    {
+        arr[i] = chars[i] - '0';
+    }
+    int result = arr.Sum();
+    Console.WriteLine(result);
+  }
+}
