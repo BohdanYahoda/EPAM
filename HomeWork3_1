@@ -1,0 +1,20 @@
+using System;
+class HomeWork3_1 {
+  static void Main() {
+      
+    Console.WriteLine("Введіть число а");
+        int a = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Введіть число b");
+        int b = int.Parse(Console.ReadLine());
+        
+        if(b >= a) {
+            Console.WriteLine("Число a повинно бути більше за число b");
+        } else{
+        
+        for(int x = a; x >= b; x-- ){
+            Console.WriteLine(x);
+        }
+        }
+  }
+  }
