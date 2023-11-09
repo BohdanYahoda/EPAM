@@ -39,6 +39,11 @@ class HomeWork4_2 {
             temp += array[i,j];
         }
         // Console.WriteLine(temp); - для перевірки
+        //додав запис суми елементів першого рядка в змінну sum
+        if (i == 0)
+        {
+            sum = temp;
+        }
         if (sum < temp)
         {
             sum = temp;
