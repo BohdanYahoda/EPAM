@@ -1,0 +1,17 @@
+using System;
+class Program {
+   
+  static void Main(string[] args){
+      Console.WriteLine("Введіть ціле число №1");
+    double number1 = double.Parse(Console.ReadLine());
+    
+    Console.WriteLine("Введіть ціле число №2");
+    double number2 = double.Parse(Console.ReadLine());
+    
+    Console.WriteLine(Average(number1, number2));
+  }
+  
+  private static double Average(double x, double y){
+      return (x + y)/2;
+  }
+}
