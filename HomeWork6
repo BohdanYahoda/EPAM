@@ -1,0 +1,78 @@
+using System;
+class HomeWork6 {
+  static void Main() {
+    
+    Car car1 = new Car("BMW", 250);
+    Console.WriteLine(car1.GetModel());
+    Console.WriteLine(car1.MaxSpeed);
+    
+    Car car2 = new Car ("Mercedes", 200);
+    car2.SetModel("Subaru");
+    Console.WriteLine(car2.GetModel());
+    Console.WriteLine(car2.MaxSpeed);
+    
+    if (car1.MaxSpeed > car2.MaxSpeed){
+        Console.WriteLine($"Швидша машина {car1.Model}");
+    }else{
+        Console.WriteLine($"Швидша машина {car2.Model}");
+    }
+  }
+}
+
+
+
+public class Car {
+    private string model;
+    private int maxSpeed;
+    
+    public Car(){
+        
+    }
+    
+    public Car (string model){
+        this.model = model;
+    }
+    
+    public Car (string model, int maxSpeed){
+        this.model = model;
+        this.maxSpeed = maxSpeed;
+    }
+    
+    public void AboutMe(){
+            Console.WriteLine($"У мене авто моделі {model}. Його швидкість {maxSpeed} км/год!!!");
+        }
+        
+    
+    public void StartEngine(){
+            Console.WriteLine("Машина завелась! Поїхали");
+        }
+    
+    
+    public string GetModel(){
+        return model;
+    }
+    
+    public void SetModel(string model){
+        this.model = model;
+    }
+    
+    
+    
+    public string Model{
+        get{
+            return model;
+        }
+        set{
+            model = value;
+        }
+    }
+    
+    public int MaxSpeed{
+        get{
+            return maxSpeed;
+        }
+        set{
+            maxSpeed = value;
+        }
+    }
+}
