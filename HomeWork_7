@@ -1,0 +1,82 @@
+using System;
+class Program {
+  static void Main(string[] args) {
+    Mobile[] mobiles = {
+        new Car("Mercedes", 100, 8),
+        new Vehicle("Renault", 140, 20)
+    };
+   
+      if ((mobiles[0] as Car).MaxSpeed > (mobiles[1] as Vehicle).MaxSpeed){
+          Console.WriteLine($"Модель: {(mobiles[0] as Car).Model} \nШвидкість: {(mobiles[0] as Car).MaxSpeed} \nКількість місць: {(mobiles[0] as Car).Seats}");
+      }else{
+          Console.WriteLine($"Модель: {(mobiles[1] as Vehicle).Model} \nШвидкість: {(mobiles[1] as Vehicle).MaxSpeed} \nВага вантажу: {(mobiles[1] as Vehicle).Weight}");
+      }
+  }
+}
+
+
+public class Mobile {
+    private string model;
+    private int maxSpeed;
+
+public Mobile(){
+}
+
+public Mobile(string model, int maxSpeed){
+    this.model = model;
+    this.maxSpeed = maxSpeed;
+}
+
+    public string Model{
+        get{
+            return model;
+        }
+        set{
+            model = value;
+        }
+    }
+    public int MaxSpeed{
+        get{
+            return maxSpeed;
+        }
+        set{
+            maxSpeed = value;
+        }
+    }
+} 
+
+public class Car : Mobile{
+    private int seats;
+    
+    public Car(string model, int maxSpeed, int seats):base(model, maxSpeed)
+    {
+        this.seats = seats;
+    }
+    
+    public int Seats{
+        get{
+            return seats;
+        }
+        set{
+            seats = value;
+        }
+    }
+}
+
+public class Vehicle : Mobile{
+    private int weight;
+    
+    public Vehicle(string model, int maxSpeed, int weight):base(model, maxSpeed)
+    {
+        this.weight = weight;
+    }
+    
+    public int Weight{
+         get{
+            return weight;
+        }
+        set{
+            weight = value;
+        }
+    }
+}
