@@ -1,0 +1,51 @@
+abstract class Planet
+{
+
+    public abstract void ReportAboutMovement();
+
+
+    public abstract void ReportAboutLife();
+
+}
+class Earth:Planet {
+    private string turnAround = "Sun";
+    private bool isLife = true;
+    public override void ReportAboutMovement() {
+        Console.WriteLine($"Earth turns around {turnAround}"); 
+            }
+    public override void ReportAboutLife()
+    {
+        Console.WriteLine($"Is life exist: {isLife}");
+    }
+}
+class Moon : Planet {
+    private string turnAround = "Earth";
+    private bool isLife = false;
+    public override void ReportAboutMovement()
+    {
+        Console.WriteLine($"Moon turns around {turnAround}");
+    }
+    public override void ReportAboutLife()
+    {
+        Console.WriteLine($"Is life exist: {isLife}");
+    }
+}
+class Program
+{
+    static void Main(string[] args) {
+        Planet[] planets = new Planet[2];
+        Planet earth = new Earth();
+        Planet moon = new Moon();
+        planets[0] = earth;
+        planets[1] = moon;
+
+
+
+
+        foreach (Planet planet in planets)
+        {
+            planet.ReportAboutMovement();
+            planet.ReportAboutLife();
+        }
+    }
+}
