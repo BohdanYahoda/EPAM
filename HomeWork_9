@@ -1,0 +1,90 @@
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<Automobile> myCars = new List<Automobile>();
+        Automobile mers = new Car("Mercedes", 250, 8);
+        Automobile renault = new Car("Renault", 340, 20);
+        Automobile bmw = new Car("BMW", 400, 4);
+
+        myCars.Add(mers);
+        myCars.Add(renault);
+        myCars.Add(bmw);
+
+        foreach (Automobile m in myCars)
+        {
+            Console.WriteLine($"Модель: {m.Model} \nШвидкість: {m.MaxSpeed} \nКількість місць: {(m as Car).Seats}");
+            Console.WriteLine();
+        }
+
+        //Console.WriteLine((mers.MaxSpeed > renault.MaxSpeed) ? ((mers.MaxSpeed > bmw.MaxSpeed) ? mers.MaxSpeed : bmw.MaxSpeed) : ((renault.MaxSpeed > bmw.MaxSpeed) ? renault.MaxSpeed : bmw.MaxSpeed));
+        if ((mers.MaxSpeed > renault.MaxSpeed) && (mers.MaxSpeed > bmw.MaxSpeed)) {
+            Console.WriteLine(mers.Model);
+        }
+        else if ((renault.MaxSpeed > mers.MaxSpeed) && (renault.MaxSpeed > bmw.MaxSpeed)){
+            Console.WriteLine(renault.Model);
+        }
+        else { Console.WriteLine(bmw.Model);}
+    }
+}
+public class Automobile
+{
+    private string model;
+    private int maxSpeed;
+
+    public Automobile()
+    {
+    }
+
+    public Automobile(string model, int maxSpeed)
+    {
+        this.model = model;
+        this.maxSpeed = maxSpeed;
+    }
+
+    public string Model
+    {
+        get
+        {
+            return model;
+        }
+        set
+        {
+            model = value;
+        }
+    }
+    public int MaxSpeed
+    {
+        get
+        {
+            return maxSpeed;
+        }
+        set
+        {
+            maxSpeed = value;
+        }
+    }
+}
+
+public class Car : Automobile
+{
+    private int seats;
+
+    public Car(string model, int maxSpeed, int seats) : base(model, maxSpeed)
+    {
+        this.seats = seats;
+    }
+
+    public int Seats
+    {
+        get
+        {
+            return seats;
+        }
+        set
+        {
+            seats = value;
+        }
+    }
+}
